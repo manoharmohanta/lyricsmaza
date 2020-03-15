@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{song.title.slice(0,song.title.indexOf('-'))}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <img src="https://img.youtube.com/vi/{{song.youtubeid}}/hqdefault.jpg">
+    <ion-card-header>
+      <ion-card-subtitle>Artist:- {{song.artist}}</ion-card-subtitle>
+      <ion-card-subtitle>Album:- {{song.album}}</ion-card-subtitle>
+      <ion-card-title>{{song.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="song.lyrics"></div>
+    </ion-card-content>
+    <a href="https://www.y2mate.com/youtube/{{song.youtubeid}}" target="_blank" rel="noopener noreferrer"><ion-button expand="block">Download MP4</ion-button></a>
+    <a href="https://www.y2mate.com/youtube-mp3/{{song.youtubeid}}" target="_blank" rel="noopener noreferrer"><ion-button expand="block">Download MP3</ion-button></a>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header warning>
+  <ion-toolbar>
+    <ion-title>Artist Song</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item *ngFor="let item of song" (click)="songSelected(item)">
+      <ion-avatar slot="start">
+        <img src="https://img.youtube.com/vi/{{item.youtubeid}}/hqdefault.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.title.slice(0,item.title.indexOf('-'))}}</h2>
+        <h3>{{item.artist}}</h3>
+        <p>{{item.album}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

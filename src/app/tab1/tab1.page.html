@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Latest Hindi & Punjabi Song Lyrics
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="onInput($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Latest Hindi & Punjabi Song Lyrics</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar (ionInput)="onInput($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-card>
+    <ion-item *ngFor="let item of songs" (click)="songSelected(item)">
+      <ion-avatar slot="start">
+        <img src="https://img.youtube.com/vi/{{item.youtubeid}}/hqdefault.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.title.slice(0,item.title.indexOf('-'))}}</h2>
+        <h3>{{item.artist}}</h3>
+        <p>{{item.album}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  
+</ion-content>

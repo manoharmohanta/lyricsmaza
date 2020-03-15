@@ -1,0 +1,8 @@
+{
+  "name": "lyricsmaza",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
